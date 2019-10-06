@@ -127,8 +127,8 @@ Status Insert(SString S, SString T, int pos) {
     if (a + b > MAX_STRLEN-1) {
         int c = MAX_STRLEN -1 - a;//空出来max-a个长度
         int i, j = 0;
-        
-        for (i = MAX_STRLEN-1; i >= pos + c-1; i--) {
+        S[MAX_STRLEN-1] = '\0';
+        for (i = MAX_STRLEN-2; i >= pos + c-1; i--) {
             S[i] = S[i-c];
         }
         for (i = pos-1; i < pos + c-1; i++) {
@@ -139,6 +139,7 @@ Status Insert(SString S, SString T, int pos) {
     }
     else {
         int i, j = 0;
+        S[a+b] = '\0';
         for (i = a + b-1; i >= pos + b-1; i--) {
             S[i] = S[i-b];
         }
