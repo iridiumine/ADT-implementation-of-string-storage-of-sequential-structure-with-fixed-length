@@ -162,10 +162,10 @@ Status Delete(SString S, int pos, int len) {
     }
     else {
         int i;
-        for (i = pos-1; i < a - len - 1; i++) {
+        for (i = pos-1; i < a - len; i++) {
             S[i] = S[i + len];
         }
-        for (i = a - len - 1; i < a; i++) {
+        for (i = a - len; i < a; i++) {
             S[i] = '\0';
         }
         return OK;
